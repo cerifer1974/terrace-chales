@@ -1,0 +1,338 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  
+  --color-warm-bg: #FBF9F5;
+  --color-sand-bg: #F0ECE4;
+  --color-sand-card: #E8E2D8;
+  --color-charcoal-primary: #1C1B19;
+  --color-charcoal-secondary: #4A4642;
+  --color-charcoal-muted: #7A756F;
+  --color-forest-dark: #1E2B22;
+  --color-wood-accent: #785A44;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: var(--color-charcoal-primary);
+    background-color: var(--color-warm-bg);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, .font-editorial {
+    font-family: var(--font-serif);
+    font-weight: 300;
+  }
+}
+
+/* Custom micro-interactions & utility classes */
+.tracking-ultra-wide {
+  letter-spacing: 0.22em;
+}
+
+.tracking-wide-editorial {
+  letter-spacing: 0.12em;
+}
+
+.hero-overlay-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 15, 12, 0.45) 0%,
+    rgba(10, 15, 12, 0.35) 40%,
+    rgba(10, 15, 12, 0.7) 80%,
+    rgba(10, 15, 12, 0.9) 100%
+  );
+}
+
+/* ============================================================
+   ORGANIC EDITORIAL SHAPES
+   Formas orgânicas de fundo ("ilhas editoriais") atrás dos
+   blocos de título. Cada shape = blob principal (::before)
+   + pseudoforma de saliência (::after), mesma cor, contornos
+   assimétricos — a união gera saliências e reentrâncias.
+   Camadas: background da seção ↓ shape ↓ texto.
+   ============================================================ */
+.organic-shape {
+  position: relative;
+  isolation: isolate; /* garante que os pseudos fiquem acima do bg da seção e abaixo do texto */
+}
+
+.organic-shape::before,
+.organic-shape::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------
+   A EXPERIÊNCIA — forma vertical, volumosa no canto superior
+   esquerdo, com expansão para a direita na região central.
+   ------------------------------------------------------------ */
+.shape-experience::before {
+  background-color: #EAE2D1;
+  width: 116%;
+  height: 110%;
+  top: -11%;
+  left: -20%;
+  border-radius: 41% 59% 46% 54% / 58% 42% 65% 35%;
+  transform: rotate(-5deg);
+}
+
+.shape-experience::after {
+  background-color: #EAE2D1;
+  width: 44%;
+  height: 38%;
+  top: 43%;
+  right: -18%;
+  border-radius: 64% 36% 51% 49% / 44% 67% 33% 56%;
+  transform: rotate(9deg);
+}
+
+/* ------------------------------------------------------------
+   ACOMODAÇÕES — forma alta e volumosa (~1.5:1), com saliência
+   superior esquerda e expansão inferior direita.
+   ------------------------------------------------------------ */
+.shape-accommodations::before {
+  background-color: #DAD5C1;
+  width: 112%;
+  height: 182%;
+  top: -30%;
+  left: -12%;
+  border-radius: 47% 53% 38% 62% / 38% 62% 41% 59%;
+  transform: rotate(-3deg);
+}
+
+.shape-accommodations::after {
+  background-color: #DAD5C1;
+  width: 50%;
+  height: 76%;
+  bottom: -32%;
+  right: -7%;
+  border-radius: 56% 44% 62% 38% / 46% 54% 66% 34%;
+  transform: rotate(6deg);
+}
+
+/* ------------------------------------------------------------
+   EXPERIÊNCIA IMERSIVA — forma vertical/quase quadrada, bem irregular,
+   com saliência apontando para o vídeo (direita).
+   ------------------------------------------------------------ */
+.shape-chale::before {
+  background-color: #EAE2D1;
+  width: 124%;
+  height: 108%;
+  top: -10%;
+  left: -15%;
+  border-radius: 54% 46% 37% 63% / 45% 59% 41% 55%;
+  transform: rotate(4deg);
+}
+
+.shape-chale::after {
+  background-color: #EAE2D1;
+  width: 34%;
+  height: 46%;
+  top: 27%;
+  right: -14%;
+  border-radius: 59% 41% 48% 52% / 53% 47% 63% 37%;
+  transform: rotate(-8deg);
+}
+
+/* ------------------------------------------------------------
+   NOSSA HISTÓRIA — blob de apoio atrás do texto, compacto,
+   silhueta irregular "desenhada à mão": volume principal
+   deslocado ao topo-direito, saliência discreta inferior
+   esquerda apontando para a fotografia.
+   ------------------------------------------------------------ */
+.shape-story::before {
+  background-color: #F0EADC;
+  width: 114%;
+  height: 100%;
+  top: -6%;
+  left: -1%;
+  border-radius: 34% 66% 42% 58% / 62% 44% 66% 34%;
+  transform: rotate(-3deg);
+}
+
+.shape-story::after {
+  background-color: #F0EADC;
+  width: 26%;
+  height: 36%;
+  bottom: -7%;
+  right: -3%;
+  border-radius: 48% 52% 61% 39% / 55% 43% 57% 45%;
+  transform: rotate(8deg);
+}
+
+/* ------------------------------------------------------------
+   CAFÉ DA MANHÃ — pedra larga mas ALTA e irregular, com
+   saliência inferior em direção à fotografia do café.
+   ------------------------------------------------------------ */
+.shape-breakfast::before {
+  background-color: #E3DAC6;
+  width: 118%;
+  height: 176%;
+  top: -29%;
+  left: -13%;
+  border-radius: 43% 57% 50% 50% / 40% 60% 43% 57%;
+  transform: rotate(-4deg);
+}
+
+.shape-breakfast::after {
+  background-color: #E3DAC6;
+  width: 42%;
+  height: 54%;
+  bottom: -21%;
+  right: -5%;
+  border-radius: 61% 39% 46% 54% / 51% 49% 69% 31%;
+  transform: rotate(7deg);
+}
+
+/* ------------------------------------------------------------
+   GALERIA — silhueta própria: volume no quadrante superior
+   direito, com reentrância à esquerda e saliência inferior.
+   ------------------------------------------------------------ */
+.shape-gallery::before {
+  background-color: #E3DAC6;
+  width: 121%;
+  height: 152%;
+  top: -23%;
+  left: -9%;
+  border-radius: 39% 61% 47% 53% / 58% 42% 63% 37%;
+  transform: rotate(3deg);
+}
+
+.shape-gallery::after {
+  background-color: #E3DAC6;
+  width: 37%;
+  height: 51%;
+  bottom: -17%;
+  left: -13%;
+  border-radius: 57% 43% 65% 35% / 48% 52% 41% 59%;
+  transform: rotate(-7deg);
+}
+
+/* ------------------------------------------------------------
+   LOCALIZAÇÃO — blob horizontal alongado, assimetria clara,
+   saliência suave no canto inferior esquerdo.
+   ------------------------------------------------------------ */
+.shape-location::before {
+  background-color: #E3DAC6;
+  width: 135%;
+  height: 118%;
+  top: -14%;
+  left: -18%;
+  border-radius: 42% 58% 36% 64% / 52% 48% 61% 39%;
+  transform: rotate(1.5deg);
+}
+
+.shape-location::after {
+  background-color: #E3DAC6;
+  width: 32%;
+  height: 42%;
+  bottom: -10%;
+  left: -10%;
+  border-radius: 55% 45% 58% 42% / 44% 56% 37% 63%;
+  transform: rotate(-5deg);
+}
+
+/* Mobile: shapes proporcionais, preservando a silhueta irregular */
+@media (max-width: 640px) {
+  .shape-experience::before {
+    width: 114%;
+    height: 106%;
+    top: -7%;
+    left: -14%;
+  }
+  .shape-experience::after {
+    width: 40%;
+    right: -12%;
+  }
+  .shape-accommodations::before {
+    width: 110%;
+    height: 168%;
+    top: -22%;
+    left: -8%;
+  }
+  .shape-accommodations::after {
+    width: 46%;
+    height: 64%;
+    bottom: -24%;
+    right: -5%;
+  }
+  .shape-chale::before {
+    width: 116%;
+    height: 104%;
+    top: -7%;
+    left: -10%;
+  }
+  .shape-chale::after {
+    width: 30%;
+    right: -10%;
+  }
+  .shape-story::before {
+    width: 106%;
+    height: 98%;
+    top: -4%;
+    left: -1%;
+  }
+  .shape-story::after {
+    width: 22%;
+    height: 32%;
+    bottom: -5%;
+    right: -2%;
+  }
+  .shape-breakfast::before {
+    width: 112%;
+    height: 158%;
+    top: -21%;
+    left: -8%;
+  }
+  .shape-breakfast::after {
+    width: 38%;
+    height: 46%;
+    bottom: -16%;
+    right: -4%;
+  }
+  .shape-gallery::before {
+    width: 114%;
+    height: 140%;
+    top: -17%;
+    left: -7%;
+  }
+  .shape-gallery::after {
+    width: 34%;
+    height: 44%;
+    bottom: -14%;
+    left: -9%;
+  }
+  .shape-location::before {
+    width: 122%;
+    height: 110%;
+    top: -9%;
+    left: -12%;
+  }
+  .shape-location::after {
+    width: 28%;
+    height: 38%;
+    bottom: -8%;
+    left: -7%;
+  }
+}
+
+@keyframes subtleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+.animate-subtle-bounce {
+  animation: subtleFloat 2.5s ease-in-out infinite;
+}
