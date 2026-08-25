@@ -1,4 +1,5 @@
 import React from 'react';
+import { MapPin } from 'lucide-react';
 import { siteData } from '../data/siteData';
 
 export const Location = () => {
@@ -59,8 +60,9 @@ export const Location = () => {
               href={location.ctaHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-7 py-3.5 border border-[#242320]/40 hover:border-[#242320] text-[#1A1918] text-xs sm:text-[13px] tracking-[0.2em] uppercase font-medium hover:bg-[#1A1918] hover:text-white transition-all duration-300 active:scale-[0.98] mt-4"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-[#785A44]/30 background-[#785A44]/10 text-[#1E2B22] text-xs sm:text-[12px] tracking-[0.2em] uppercase font-medium transition-all duration-300 hover:bg-[#785A44]/20 hover:text-[#1E2B22] active:scale-[0.95]"
             >
+              <MapPin className="h-4 w-4 text-[#1E2B22]" />
               {location.ctaLabel}
             </a>
           </div>
