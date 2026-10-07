@@ -14,7 +14,7 @@ export const Breakfast = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
         {/* Header textual estreito — acima da imagem */}
-        <div className="organic-shape shape-breakfast mb-10 sm:mb-14 max-w-xl">
+        <div data-reveal className="reveal organic-shape shape-breakfast mb-10 sm:mb-14 max-w-xl">
           {/* Eyebrow */}
           <div className="inline-flex items-center space-x-3 mb-4">
             <span className="h-[1px] w-5 bg-[#8C867F]/40 inline-block flex-shrink-0" />
@@ -32,7 +32,7 @@ export const Breakfast = () => {
 
         {/* Main wide image — horizontal protagonist */}
         {/* FOTO REAL DO CLIENTE: Substitua em siteData.breakfast.mainImage */}
-        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] overflow-hidden mb-12 sm:mb-16">
+        <div data-reveal className="reveal reveal-delay-1 relative w-full aspect-[16/9] sm:aspect-[21/9] overflow-hidden mb-12 sm:mb-16">
           <img
             src={breakfast.mainImage.src}
             alt={breakfast.mainImage.alt}
@@ -47,8 +47,8 @@ export const Breakfast = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
 
           {/* Text block — takes wider column */}
-          <div className="md:col-span-7 lg:col-span-6 space-y-5">
-            <p className="font-sans text-sm sm:text-base text-[#4E4A45] font-light leading-relaxed">
+          <div data-reveal className="reveal md:col-span-7 lg:col-span-6 space-y-5">
+            <p className="font-sans text-[15px] sm:text-base text-[#4E4A45] font-light leading-relaxed">
               {breakfast.description}
             </p>
             <p className="font-editorial text-xl sm:text-2xl lg:text-3xl font-light italic text-[#2C2A28] leading-snug pt-2">
@@ -58,7 +58,7 @@ export const Breakfast = () => {
 
           {/* Small editorial detail image */}
           {/* FOTO REAL DO CLIENTE: Substitua em siteData.breakfast.detailImage */}
-          <div className="md:col-span-5 lg:col-start-8 lg:col-span-5">
+          <div data-reveal className="reveal reveal-delay-2 md:col-span-5 lg:col-start-8 lg:col-span-5">
             <div className="aspect-square overflow-hidden">
               <img
                 src={breakfast.detailImage.src}

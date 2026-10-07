@@ -9,7 +9,7 @@ export const Accommodations = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         
         {/* Section Header */}
-        <div className="organic-shape shape-accommodations mb-14 sm:mb-20 max-w-2xl">
+        <div data-reveal className="reveal organic-shape shape-accommodations mb-14 sm:mb-20 max-w-2xl">
           <div className="inline-flex items-center space-x-3 mb-4">
             <span className="h-[1px] w-5 bg-[#8C867F]/40 inline-block"></span>
             <span className="font-sans text-[11px] sm:text-xs tracking-[0.24em] uppercase text-[#7A756F] font-medium">
@@ -21,15 +21,15 @@ export const Accommodations = () => {
             {accommodations.headline}
           </h2>
 
-          <p className="font-sans text-sm sm:text-base text-[#5A5550] font-light max-w-xl">
+          <p className="font-sans text-[15px] sm:text-base text-[#5A5550] font-light leading-relaxed max-w-xl">
             {accommodations.subheadline}
           </p>
         </div>
 
-        {/* 2 Large Chalet Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
-          {accommodations.chalets.map((chalet) => (
-            <div key={chalet.id} className="group flex flex-col">
+        {/* Chalet Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 xl:gap-10">
+          {accommodations.chalets.map((chalet, index) => (
+            <article key={chalet.id} data-reveal className={`reveal ${['reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3'][index]} group flex flex-col`}>
               
               {/* Card Image Container */}
               {/* FOTO REAL DO CLIENTE: Substitua a foto correspondente em siteData.accommodations.chalets */}
@@ -38,6 +38,7 @@ export const Accommodations = () => {
                   src={chalet.image}
                   alt={chalet.imageAlt || chalet.title}
                   className="w-full h-full object-cover object-center transform group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                  style={{ objectPosition: chalet.imagePosition || 'center' }}
                   loading="lazy"
                   width="600"
                   height="750"
@@ -63,7 +64,19 @@ export const Accommodations = () => {
                 ))}
               </div>
 
-            </div>
+              <a
+                href={accommodations.reserveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-7 inline-flex w-fit items-center gap-3 font-sans text-[11px] sm:text-xs tracking-[0.18em] uppercase font-semibold text-[#1E2B22] group/link"
+              >
+                <span className="border-b border-[#1E2B22]/35 pb-1 transition-colors group-hover/link:border-[#1E2B22]">
+                  Ver disponibilidade
+                </span>
+                <span aria-hidden="true" className="transition-transform duration-300 group-hover/link:translate-x-1">↗</span>
+              </a>
+
+            </article>
           ))}
         </div>
 
@@ -71,6 +84,8 @@ export const Accommodations = () => {
         <div className="mt-16 sm:mt-24 flex justify-start">
           <a
             href={accommodations.ctaButton.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 border border-[#242320]/40 hover:border-[#242320] text-[#1A1918] text-xs sm:text-[13px] tracking-[0.2em] uppercase font-medium hover:bg-[#1A1918] hover:text-white transition-all duration-300 active:scale-[0.98]"
           >
             {accommodations.ctaButton.label}

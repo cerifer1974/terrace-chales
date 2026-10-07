@@ -14,7 +14,7 @@ export const ExperienceVideo = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
           {/* Left Column (Desktop): Text Content with Generous Respite */}
-          <div className="organic-shape shape-chale lg:col-span-5 flex flex-col justify-center order-2 lg:order-1 space-y-6 sm:space-y-8">
+          <div data-reveal className="reveal organic-shape shape-chale lg:col-span-5 flex flex-col justify-center order-2 lg:order-1 space-y-6 sm:space-y-8">
             {/* Eyebrow */}
             <div className="inline-flex items-center space-x-3">
               <span className="h-[1px] w-5 bg-[#8C867F]/40 inline-block flex-shrink-0" />
@@ -31,7 +31,7 @@ export const ExperienceVideo = () => {
             </h2>
 
             {/* Short Description */}
-            <p className="font-sans text-sm sm:text-base text-[#4E4A45] font-light leading-relaxed max-w-md">
+            <p className="font-sans text-[15px] sm:text-base text-[#4E4A45] font-light leading-relaxed max-w-md">
               {experienceVideo.description}
             </p>
 
@@ -44,7 +44,7 @@ export const ExperienceVideo = () => {
           </div>
 
           {/* Right Column (Desktop): Vertical Video Frame */}
-          <div className="lg:col-span-7 flex justify-center lg:justify-end order-1 lg:order-2">
+          <div data-reveal className="reveal reveal-delay-2 lg:col-span-7 flex justify-center lg:justify-end order-1 lg:order-2">
             <div className="relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[420px] aspect-[9/16] overflow-hidden shadow-2xl bg-[#1A1918]">
               {/* Video Element */}
               <video

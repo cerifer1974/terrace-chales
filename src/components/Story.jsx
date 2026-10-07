@@ -18,7 +18,7 @@ export const Story = () => {
         {/* ============================================================
            DESKTOP — composição em camadas assimétrica
            ============================================================ */}
-        <div className="hidden lg:block relative min-h-[640px]">
+        <div data-reveal className="reveal hidden lg:block relative min-h-[640px]">
 
           {/* 1. BLOB ORGÂNICO — apoio gráfico atrás do texto, toque discreto na foto */}
           <div
@@ -94,7 +94,7 @@ export const Story = () => {
         <div className="lg:hidden relative">
 
           {/* Fotografia — topo, bordas limpas */}
-          <div className="relative aspect-[4/5] w-full max-w-xl mx-auto">
+          <div data-reveal className="reveal relative aspect-[4/5] w-full max-w-xl mx-auto">
             <img
               src={story.image.src}
               alt={story.image.alt}
@@ -106,7 +106,7 @@ export const Story = () => {
           </div>
 
           {/* Blob orgânico — inicia ~32px antes do fim da foto (sobreposição vertical) */}
-          <div className="organic-shape shape-story relative -mt-8 pb-10 px-6">
+          <div data-reveal className="reveal reveal-delay-1 organic-shape shape-story relative -mt-8 pb-10 px-6">
             {/* Bloco textual dentro do blob */}
             <div className="max-w-xl mx-auto">
               {/* Eyebrow */}
@@ -125,10 +125,10 @@ export const Story = () => {
               </h2>
 
               {/* Body Text */}
-              <p className="font-sans text-sm sm:text-base text-[#4E4A45] font-light leading-relaxed mb-4">
+              <p className="font-sans text-[15px] sm:text-base text-[#4E4A45] font-light leading-relaxed mb-4">
                 {story.paragraph1}
               </p>
-              <p className="font-sans text-sm sm:text-base text-[#4E4A45] font-light leading-relaxed mb-8">
+              <p className="font-sans text-[15px] sm:text-base text-[#4E4A45] font-light leading-relaxed mb-8">
                 {story.paragraph2}
               </p>
 

@@ -10,7 +10,7 @@ export const Experience = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Editorial Text */}
-          <div className="organic-shape shape-experience lg:col-span-5 relative flex flex-col justify-center space-y-6 sm:space-y-8">
+          <div data-reveal className="reveal organic-shape shape-experience lg:col-span-5 relative flex flex-col justify-center space-y-6 sm:space-y-8">
             {/* Eyebrow */}
             <div className="inline-flex items-center space-x-3">
               <span className="h-[1px] w-5 bg-[#8C867F]/40 inline-block"></span>
@@ -28,7 +28,7 @@ export const Experience = () => {
             </h2>
 
             {/* Body Text */}
-            <p className="font-sans text-sm sm:text-base text-[#4E4A45] font-light leading-relaxed max-w-md pt-2">
+            <p className="font-sans text-[15px] sm:text-base text-[#4E4A45] font-light leading-relaxed max-w-md pt-2">
               {experience.description}
             </p>
 
@@ -41,7 +41,7 @@ export const Experience = () => {
           </div>
 
           {/* Right Column: Editorial Photo Composition with Partial Overlap */}
-          <div className="lg:col-span-7 relative flex justify-center lg:justify-end mt-8 lg:mt-0">
+          <div data-reveal className="reveal reveal-delay-2 lg:col-span-7 relative flex justify-center lg:justify-end mt-8 mb-8 sm:mb-12 lg:mt-0 lg:mb-0">
             <div className="relative w-full max-w-lg lg:max-w-none">
               
               {/* Main Vertical Image */}

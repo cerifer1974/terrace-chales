@@ -20,6 +20,23 @@ export const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!isMobileMenuOpen) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') setIsMobileMenuOpen(false);
+    };
+
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -67,7 +84,7 @@ export const Header = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden text-white/90 hover:text-white p-2 focus:outline-none"
-            aria-label="Abrir menu de navegação"
+            aria-label={isMobileMenuOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação'}
             aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -77,7 +94,7 @@ export const Header = () => {
 
       {/* Mobile Drawer Menu */}
       <div
-        className={`md:hidden fixed inset-0 top-[72px] bg-[#121914]/98 backdrop-blur-xl transition-all duration-300 flex flex-col px-8 py-10 space-y-6 text-center border-t border-white/10 ${
+        className={`md:hidden fixed inset-x-0 bottom-0 ${isScrolled ? 'top-[76px]' : 'top-[92px]'} bg-[#121914]/98 backdrop-blur-xl transition-all duration-300 flex flex-col px-8 py-10 space-y-6 text-center border-t border-white/10 ${
           isMobileMenuOpen
             ? 'opacity-100 pointer-events-auto translate-y-0'
             : 'opacity-0 pointer-events-none -translate-y-4'

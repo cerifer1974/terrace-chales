@@ -15,7 +15,7 @@ export const Gallery = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
         {/* Header textual — shape orgânico da família Terrace */}
-        <div className="organic-shape shape-gallery mb-16 sm:mb-20 lg:mb-24 max-w-2xl">
+        <div data-reveal className="reveal organic-shape shape-gallery mb-16 sm:mb-20 lg:mb-24 max-w-2xl">
           {/* Eyebrow */}
           <div className="inline-flex items-center space-x-3 mb-4">
             <span className="h-[1px] w-5 bg-[#8C867F]/40 inline-block flex-shrink-0" />
@@ -30,7 +30,7 @@ export const Gallery = () => {
             <span className="italic font-normal">{gallery.headlineLine2}</span>
           </h2>
 
-          <p className="font-sans text-sm sm:text-base text-[#4E4A45] font-light leading-relaxed max-w-md">
+          <p className="font-sans text-[15px] sm:text-base text-[#4E4A45] font-light leading-relaxed max-w-md">
             {gallery.description}
           </p>
         </div>
@@ -39,7 +39,7 @@ export const Gallery = () => {
            BLOCO 1 — PAISAGEM
            panoramica-terrace — grande, horizontal, dominante
            ============================================================ */}
-        <figure className="mb-20 lg:mb-28 group overflow-hidden">
+        <figure data-reveal className="reveal mb-20 lg:mb-28 group overflow-hidden">
           <div className="w-[90%] lg:w-[95%] mx-auto lg:ml-0 lg:mr-auto aspect-[16/9] overflow-hidden">
             <img
               src={panoramic.src}
@@ -65,7 +65,7 @@ export const Gallery = () => {
         <div className="flex flex-col lg:flex-row gap-0 lg:gap-6 mb-20 lg:mb-28">
 
           {/* Vista da sacada — ~58% */}
-          <figure className="w-full lg:w-[58%] flex-shrink-0 group overflow-hidden -mt-8 lg:mt-0">
+          <figure data-reveal className="reveal w-full lg:w-[58%] flex-shrink-0 group overflow-hidden lg:mt-0">
             <div className="aspect-[3/4] overflow-hidden">
               <img
                 src={balcony.src}
@@ -79,7 +79,7 @@ export const Gallery = () => {
           </figure>
 
           {/* Café na cama — ~42% */}
-          <figure className="w-full lg:w-[42%] flex-shrink-0 group overflow-hidden mt-8 lg:-mt-8">
+          <figure data-reveal className="reveal reveal-delay-2 w-full lg:w-[42%] flex-shrink-0 group overflow-hidden mt-6 lg:-mt-8">
             <div className="aspect-[4/5] overflow-hidden">
               <img
                 src={coffeeInBed.src}
@@ -98,7 +98,7 @@ export const Gallery = () => {
            BLOCO 3 — ENCERRAMENTO
            vista-chale-terrace — grande, horizontal, fechamento visual
            ============================================================ */}
-        <figure className="group overflow-hidden">
+        <figure data-reveal className="reveal group overflow-hidden">
           <div className="w-[92%] lg:w-[95%] mx-auto lg:ml-auto lg:mr-0 aspect-[16/10] overflow-hidden">
             <img
               src={chaletView.src}

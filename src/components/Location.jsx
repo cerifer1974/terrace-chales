@@ -15,7 +15,7 @@ export const Location = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
 
           {/* Bloco principal de título + endereço + shape */}
-          <div className="organic-shape shape-location lg:col-span-7 relative space-y-8">
+          <div data-reveal className="reveal organic-shape shape-location lg:col-span-7 relative space-y-8">
             {/* Eyebrow */}
             <div className="inline-flex items-center space-x-3">
               <span className="h-[1px] w-5 bg-[#8C867F]/40 inline-block flex-shrink-0" />
@@ -32,7 +32,7 @@ export const Location = () => {
             </h2>
 
             {/* Texto descritivo */}
-            <p className="font-sans text-sm sm:text-base text-[#4E4A45] font-light leading-relaxed max-w-xl">
+            <p className="font-sans text-[15px] sm:text-base text-[#4E4A45] font-light leading-relaxed max-w-xl">
               {location.description}
             </p>
 
@@ -68,7 +68,7 @@ export const Location = () => {
           </div>
 
           {/* Imagem da placa externa — detalhe editorial à direita */}
-          <figure className="hidden lg:block lg:col-span-5 lg:col-start-8 group overflow-hidden">
+          <figure data-reveal className="reveal reveal-delay-2 hidden lg:block lg:col-span-5 lg:col-start-8 group overflow-hidden">
             <div className="aspect-[3/4] w-[72%] ml-auto lg:w-[80%] overflow-hidden">
               <img
                 src={location.detailImage.src}
@@ -82,7 +82,7 @@ export const Location = () => {
           </figure>
 
           {/* Mobile: placa externa abaixo do texto */}
-          <figure className="lg:hidden mt-10 group overflow-hidden">
+          <figure data-reveal className="reveal reveal-delay-1 lg:hidden mt-10 group overflow-hidden">
             <div className="w-[65%] mx-auto aspect-square max-w-xs overflow-hidden">
               <img
                 src={location.detailImage.src}

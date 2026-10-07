@@ -72,6 +72,7 @@ export const siteData = {
     eyebrow: "ACOMODAÇÕES",
     headline: "Seu refúgio nas montanhas.",
     subheadline: "Privacidade, conforto e aquele tipo de silêncio que só a montanha oferece.",
+    reserveUrl: "https://hotels.cloudbeds.com/reservas/bjasvx",
     chalets: [
       {
         id: "chale-01",
@@ -96,11 +97,24 @@ export const siteData = {
           "CAFÉ DA MANHÃ",
           "VISTA PARA NATUREZA"
         ]
+      },
+      {
+        id: "chale-03",
+        title: "Chalé 03",
+        image: "/images/terrace/terrace-chales/chale-03-interno.jpg",
+        imagePosition: "58% center",
+        imageAlt: "Interior do Chalé 03 com cama, lareira e arquitetura de montanha",
+        amenities: [
+          "LAREIRA",
+          "HIDROMASSAGEM",
+          "CAFÉ DA MANHÃ",
+          "VISTA PARA NATUREZA"
+        ]
       }
     ],
     ctaButton: {
-      label: "CONHECER ACOMODAÇÕES",
-      href: "#acomodacoes"
+      label: "CONSULTAR DATAS",
+      href: "https://hotels.cloudbeds.com/reservas/bjasvx"
     }
   },
 

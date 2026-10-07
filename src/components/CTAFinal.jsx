@@ -1,4 +1,5 @@
 import React from 'react';
+import { Phone } from 'lucide-react';
 import { siteData } from '../data/siteData';
 
 export const CTAFinal = () => {
@@ -24,7 +25,7 @@ export const CTAFinal = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-28 sm:py-36 lg:py-48">
-        <div className="max-w-3xl">
+        <div data-reveal className="reveal max-w-3xl">
           {/* Eyebrow */}
           <div className="inline-flex items-center space-x-3 mb-4 sm:mb-6">
             <span className="h-[1px] w-6 bg-white/50 inline-block" />
@@ -41,7 +42,7 @@ export const CTAFinal = () => {
           </h2>
 
           {/* Description */}
-          <p className="font-sans text-sm sm:text-base md:text-lg text-white/85 font-light leading-relaxed max-w-xl mb-10 sm:mb-12">
+          <p className="font-sans text-[15px] sm:text-base md:text-lg text-white/85 font-light leading-relaxed max-w-xl mb-10 sm:mb-12">
             {ctaFinal.description}
           </p>
 
@@ -64,6 +65,7 @@ export const CTAFinal = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-4 border border-white/50 text-white/90 hover:text-white hover:border-white text-xs sm:text-[13px] tracking-[0.18em] uppercase font-medium transition-all duration-300 w-full sm:w-auto"
             >
+              <Phone size={16} strokeWidth={1.6} className="mr-2.5" aria-hidden="true" />
               {ctaFinal.secondaryCta.label}
             </a>
           </div>
